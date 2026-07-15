@@ -1,0 +1,6 @@
+{
+  "variants": [
+    {"id": "v01", "voice": "default",       "exaggeration": 0.5, "cfg_weight": 0.5, "temperature": 0.8, "phase": 2},
+    {"id": "v02", "voice": "demo_narrator", "exaggeration": 0.5, "cfg_weight": 0.5, "temperature": 0.8, "phase": 2}
+  ]
+}

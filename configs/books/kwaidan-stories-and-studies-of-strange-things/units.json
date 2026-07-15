@@ -1,0 +1,108 @@
+{
+  "source_path": "source_media/books/Stories-and-Studies-of-Strange-Things.epub",
+  "unit1": {
+    "name": "INTRODUCTION",
+    "source_xhtml": "OEBPS/6436869939947356681_1210-h-3.htm.xhtml",
+    "variant": "v02"
+  },
+  "unit2": {
+    "name": "KWAIDAN",
+    "source_xhtml": "OEBPS/6436869939947356681_1210-h-5.htm.xhtml",
+    "variant": "v02"
+  },
+  "unit3": {
+    "name": "OSHIDORI",
+    "source_xhtml": "OEBPS/6436869939947356681_1210-h-6.htm.xhtml",
+    "variant": "v02"
+  },
+  "unit4": {
+    "name": "THE STORY OF O-TEI",
+    "source_xhtml": "OEBPS/6436869939947356681_1210-h-7.htm.xhtml",
+    "variant": "v02"
+  },
+  "unit5": {
+    "name": "UBAZAKURA",
+    "source_xhtml": "OEBPS/6436869939947356681_1210-h-8.htm.xhtml",
+    "variant": "v02"
+  },
+  "unit6": {
+    "name": "DIPLOMACY",
+    "source_xhtml": "OEBPS/6436869939947356681_1210-h-9.htm.xhtml",
+    "variant": "v02"
+  },
+  "unit7": {
+    "name": "OF A MIRROR AND A BELL",
+    "source_xhtml": "OEBPS/6436869939947356681_1210-h-10.htm.xhtml",
+    "variant": "v02"
+  },
+  "unit8": {
+    "name": "JIKININKI",
+    "source_xhtml": "OEBPS/6436869939947356681_1210-h-11.htm.xhtml",
+    "variant": "v02"
+  },
+  "unit9": {
+    "name": "MUJINA",
+    "source_xhtml": "OEBPS/6436869939947356681_1210-h-12.htm.xhtml",
+    "variant": "v02"
+  },
+  "unit10": {
+    "name": "ROKURO-KUBI",
+    "source_xhtml": "OEBPS/6436869939947356681_1210-h-13.htm.xhtml",
+    "variant": "v02"
+  },
+  "unit11": {
+    "name": "A DEAD SECRET",
+    "source_xhtml": "OEBPS/6436869939947356681_1210-h-14.htm.xhtml",
+    "variant": "v02"
+  },
+  "unit12": {
+    "name": "YUKI-ONNA",
+    "source_xhtml": "OEBPS/6436869939947356681_1210-h-15.htm.xhtml",
+    "variant": "v02"
+  },
+  "unit13": {
+    "name": "THE STORY OF AOYAGI",
+    "source_xhtml": "OEBPS/6436869939947356681_1210-h-16.htm.xhtml",
+    "variant": "v02"
+  },
+  "unit14": {
+    "name": "JIU-ROKU-ZAKURA",
+    "source_xhtml": "OEBPS/6436869939947356681_1210-h-17.htm.xhtml",
+    "variant": "v02"
+  },
+  "unit15": {
+    "name": "THE DREAM OF AKINOSUKÉ",
+    "source_xhtml": "OEBPS/6436869939947356681_1210-h-18.htm.xhtml",
+    "variant": "v02"
+  },
+  "unit16": {
+    "name": "RIKI-BAKA",
+    "source_xhtml": "OEBPS/6436869939947356681_1210-h-19.htm.xhtml",
+    "variant": "v02"
+  },
+  "unit17": {
+    "name": "HI-MAWARI",
+    "source_xhtml": "OEBPS/6436869939947356681_1210-h-20.htm.xhtml",
+    "variant": "v02"
+  },
+  "unit18": {
+    "name": "HŌRAI",
+    "source_xhtml": "OEBPS/6436869939947356681_1210-h-21.htm.xhtml",
+    "variant": "v02"
+  },
+  "unit19": {
+    "name": "INSECT STUDIES",
+    "source_xhtml": "OEBPS/6436869939947356681_1210-h-22.htm.xhtml",
+    "variant": "v02"
+  },
+  "unit20": {
+    "name": "MOSQUITOES",
+    "source_xhtml": "OEBPS/6436869939947356681_1210-h-23.htm.xhtml",
+    "variant": "v02"
+  },
+  "unit21": {
+    "name": "ANTS",
+    "source_xhtml": "OEBPS/6436869939947356681_1210-h-24.htm.xhtml",
+    "variant": "v02"
+  }
+}
