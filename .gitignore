@@ -1,0 +1,27 @@
+# Python
+__pycache__/
+*.pyc
+.pytest_cache/
+venv*/
+
+# Generated pipeline artifacts
+data/
+output/
+benchmark/
+
+# Private voice registry — only the .example template is tracked
+configs/voices.json
+
+# Book configs: only the public-domain demo book is tracked
+configs/books/*
+!configs/books/kwaidan-stories-and-studies-of-strange-things/
+
+# Source media: only public-domain demo assets are tracked
+source_media/books/*
+!source_media/books/Stories-and-Studies-of-Strange-Things.epub
+source_media/voices/*
+!source_media/voices/demo_narrator.wav
+
+# OS junk
+._*
+.DS_Store

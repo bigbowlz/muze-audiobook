@@ -1,0 +1,20 @@
+# TTS engine (pins torch==2.6.0 as its own dependency)
+chatterbox-tts==0.1.7
+
+# Ebook parsing
+beautifulsoup4==4.14.3
+mobi==0.4.1
+
+# Text/audio utilities
+numpy==1.26.4
+
+# Interactive CLI
+questionary==2.1.1
+
+# Dev
+pytest==9.0.3
+
+# NOTE — NVIDIA Blackwell (RTX 50-series) GPUs need CUDA 12.8 wheels, which
+# chatterbox's torch==2.6.0 pin does not provide. After `pip install -r
+# requirements.txt`, run:
+#   pip install torch==2.7.1 torchaudio==2.7.1 --index-url https://download.pytorch.org/whl/cu128
