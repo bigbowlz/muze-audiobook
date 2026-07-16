@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+# Safety net: block commits that stage private media or unverified book configs.
+# The .gitignore allowlist is the first line of defense; this catches force-adds.
+fail=0
+while IFS= read -r f; do
+  case "$f" in
+    source_media/voices/demo_narrator.wav) ;;
+    source_media/books/Stories-and-Studies-of-Strange-Things.epub) ;;
+    source_media/*)
+      echo "BLOCKED: $f — private media must stay untracked"; fail=1 ;;
+    configs/books/kwaidan-stories-and-studies-of-strange-things/*) ;;
+    configs/books/*)
+      echo "BLOCKED: $f — book configs are private unless copyright-verified"; fail=1 ;;
+    configs/voices.json)
+      echo "BLOCKED: $f — private voice registry; edit voices.json.example instead"; fail=1 ;;
+  esac
+done < <(git diff --cached --name-only)
+exit $fail
