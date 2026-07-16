@@ -31,7 +31,7 @@ def test_build_chunks_respects_max_words():
 
 def test_build_chunks_keeps_each_paragraph_separate():
     # Short paragraphs are no longer merged — each stays its own chunk
-    para = "Short para five words."  # 4 words
+    para = "Short para has five words."  # 5 words
     paragraphs = [para] * 3
     chunks = build_chunks(paragraphs, max_words=150)
     assert len(chunks) == 3
