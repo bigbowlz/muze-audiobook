@@ -36,8 +36,9 @@ flowchart LR
    with sentence-level regrouping for oversized paragraphs and
    abbreviation-aware sentence splitting.
 4. **run_benchmark.py** loads [Chatterbox TTS](https://github.com/resemble-ai/chatterbox)
-   once and generates all selected chapters, cloning the narrator from a
-   reference sample. A variant system lets you benchmark voices/parameters
+   ([ResembleAI/chatterbox](https://huggingface.co/ResembleAI/chatterbox) on
+   Hugging Face) once and generates all selected chapters, cloning the
+   narrator from a reference sample. A variant system lets you benchmark voices/parameters
    on a short excerpt before committing GPU-hours to the full book.
 5. **make_m4b.py** concatenates chapter WAVs with ffmpeg into a single M4B
    with chapter markers and cover art.
@@ -79,8 +80,8 @@ pip install torch==2.7.1 torchaudio==2.7.1 --index-url https://download.pytorch.
 ```
 
 The demo generates ~2 minutes of a *Kwaidan* story with the bundled
-public-domain narrator sample. First run downloads Chatterbox weights
-(~2 GB). Everything in the demo is public domain: the text is
+public-domain narrator sample. First run downloads the
+[Chatterbox weights](https://huggingface.co/ResembleAI/chatterbox) (~2 GB). Everything in the demo is public domain: the text is
 [Project Gutenberg #1210](https://www.gutenberg.org/ebooks/1210), and the
 narrator sample is a ~20-second clip trimmed from Ruth Golding's
 [LibriVox recording](https://librivox.org/the-adventures-of-sherlock-holmes-by-sir-arthur-conan-doyle/)
