@@ -1,18 +1,18 @@
 # muze-audiobook
 
 Convert an epub or mobi ebook into a voice-cloned audiobook with chapter
-markers, running entirely on local models.
+markers. Everything runs on local models.
 
-🎧 **Hear it first:** [demo/sample_output/oshidori-excerpt.mp3](demo/sample_output/oshidori-excerpt.mp3)
-— a story from Lafcadio Hearn's *Kwaidan*, narrated by a voice cloned from a
-~20-second public-domain sample.
+**Hear it first:** [demo/sample_output/oshidori-excerpt.mp3](demo/sample_output/oshidori-excerpt.mp3)
+is a story from Lafcadio Hearn's *Kwaidan*, narrated by a voice cloned from
+a ~20-second public-domain sample.
 
 ## Why
 
 Most books never get an audiobook. Human narration is expensive, and stock
 TTS voices are flat. This pipeline clones a narration style from a short
 voice sample and generates a complete, chaptered M4B you can drop into Apple
-Books — for the cost of your own GPU time. It is one component of **Muze**,
+Books, for the cost of your own GPU time. It is one component of **Muze**,
 a personal-AI-audio platform concept I'm building toward (personalized
 podcasts, social audio sharing).
 
@@ -31,10 +31,10 @@ flowchart LR
 1. **init_book.py** parses the ebook's NCX table of contents, filters
    boilerplate (cover, TOC, index…), and writes a per-book config.
 2. **extract_unit.py** pulls clean text from each chapter's XHTML.
-3. **chunk_text.py** splits text at paragraph boundaries into ≤150-word
-   chunks — sized so no chunk ever exceeds the TTS model's token ceiling —
-   with sentence-level regrouping for oversized paragraphs and
-   abbreviation-aware sentence splitting.
+3. **chunk_text.py** splits text at paragraph boundaries into chunks of at
+   most 150 words, small enough that no chunk ever exceeds the TTS model's
+   token ceiling. Oversized paragraphs get regrouped at sentence level,
+   with abbreviation-aware sentence splitting.
 4. **run_benchmark.py** loads [Chatterbox TTS](https://github.com/resemble-ai/chatterbox)
    ([ResembleAI/chatterbox](https://huggingface.co/ResembleAI/chatterbox) on
    Hugging Face) once and generates all selected chapters, cloning the
@@ -59,7 +59,7 @@ flowchart LR
   short chapter; the production runner loads once and streams every selected
   chapter through, caching voice conditionals after the first chunk.
 - **Bleeding-edge GPU support.** RTX 50-series (Blackwell, SM 12.0) needs
-  CUDA 12.8 wheels that upstream pins don't provide — the install docs
+  CUDA 12.8 wheels that upstream pins don't provide. The install docs
   include the override, and the runner falls back to CPU when CUDA kernels
   are incompatible.
 
@@ -89,8 +89,8 @@ of *The Adventures of Sherlock Holmes*.
 
 **Voice-cloning disclosure:** the demo output is AI-generated speech in a
 voice cloned from that public-domain recording, included strictly to
-demonstrate the pipeline — it is not the narrator's own reading, and no
-endorsement is implied. Public-domain status covers the *recording*, not a
+demonstrate the pipeline. It is not the narrator's own reading, and it does
+not imply their endorsement. Public-domain status covers the *recording*, not a
 narrator's vocal identity: cloning a real person's voice for distribution
 or commercial use can implicate right-of-publicity and digital-replica
 laws, so get the narrator's consent before using a cloned voice beyond
@@ -105,7 +105,7 @@ cp your_voice.wav source_media/voices/
 # register the voice in configs/voices.json (created from
 # voices.json.example on first demo run)
 
-# 2. Generate the chapter config — prints detected chapters for review
+# 2. Generate the chapter config (prints detected chapters for review)
 python3 scripts/init_book.py --source source_media/books/YourBook.epub
 
 # 3. Benchmark voices on one chapter, pick a winner, set it in units.json
@@ -126,7 +126,7 @@ TTS parameters per variant: `exaggeration` (emotional expressiveness),
 
 **Copyright note:** your books, voice samples, and generated audio stay in
 gitignored paths (`source_media/`, `configs/books/`, `data/`, `output/`).
-Only use voice samples and texts you have the rights to — see the
+Only use voice samples and texts you have the rights to, and read the
 voice-cloning disclosure above before sharing generated audio. A pre-commit
 guard is included: `git config core.hooksPath .githooks`.
 
@@ -136,8 +136,8 @@ guard is included: `git config core.hooksPath .githooks`.
 pytest tests/ -v
 ```
 
-Covers text cleaning, marker-based extraction, abbreviation-aware sentence
-splitting, chunk regrouping, config resolution, and output naming.
+The tests cover text cleaning, marker-based extraction, abbreviation-aware
+sentence splitting, chunk regrouping, config resolution, and output naming.
 
 ## Limitations & roadmap
 
@@ -152,4 +152,4 @@ splitting, chunk regrouping, config resolution, and output naming.
 
 ## License
 
-MIT — see [LICENSE](LICENSE). Bundled demo content is public domain.
+MIT (see [LICENSE](LICENSE)). Bundled demo content is public domain.
