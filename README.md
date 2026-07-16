@@ -82,8 +82,18 @@ The demo generates ~2 minutes of a *Kwaidan* story with the bundled
 public-domain narrator sample. First run downloads Chatterbox weights
 (~2 GB). Everything in the demo is public domain: the text is
 [Project Gutenberg #1210](https://www.gutenberg.org/ebooks/1210), and the
-narrator sample is trimmed from a
-[LibriVox recording](https://librivox.org/kwaidan-stories-and-studies-of-strange-things-by-lafcadio-hearn/).
+narrator sample is a ~20-second clip trimmed from Ruth Golding's
+[LibriVox recording](https://librivox.org/the-adventures-of-sherlock-holmes-by-sir-arthur-conan-doyle/)
+of *The Adventures of Sherlock Holmes*.
+
+**Voice-cloning disclosure:** the demo output is AI-generated speech in a
+voice cloned from that public-domain recording, included strictly to
+demonstrate the pipeline — it is not the narrator's own reading, and no
+endorsement is implied. Public-domain status covers the *recording*, not a
+narrator's vocal identity: cloning a real person's voice for distribution
+or commercial use can implicate right-of-publicity and digital-replica
+laws, so get the narrator's consent before using a cloned voice beyond
+personal or demonstration purposes.
 
 ## Producing a full audiobook
 
@@ -115,8 +125,9 @@ TTS parameters per variant: `exaggeration` (emotional expressiveness),
 
 **Copyright note:** your books, voice samples, and generated audio stay in
 gitignored paths (`source_media/`, `configs/books/`, `data/`, `output/`).
-Only use voice samples and texts you have the rights to. A pre-commit guard
-is included: `git config core.hooksPath .githooks`.
+Only use voice samples and texts you have the rights to — see the
+voice-cloning disclosure above before sharing generated audio. A pre-commit
+guard is included: `git config core.hooksPath .githooks`.
 
 ## Tests
 
