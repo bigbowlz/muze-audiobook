@@ -18,6 +18,10 @@ AAC_BITRATE = "64k"
 CHAPTER_PAUSE_SECONDS = 1.5
 
 
+def unit_sort_key(unit_id: str) -> int:
+    return int(unit_id.removeprefix("unit"))
+
+
 def get_duration_seconds(wav_path: Path) -> float:
     result = subprocess.run(
         [
@@ -86,7 +90,8 @@ def main():
     wav_files: list[Path] = []
     chapter_names: list[str] = []
 
-    for key in sorted(units.keys()):
+    unit_keys = sorted((k for k in units if k.startswith("unit")), key=unit_sort_key)
+    for key in unit_keys:
         unit_dir = output_dir / key
         wavs = sorted(unit_dir.glob("*.wav"))
         if not wavs:
