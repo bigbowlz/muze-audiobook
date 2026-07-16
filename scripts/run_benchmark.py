@@ -194,16 +194,21 @@ def main():
 
     from chatterbox.tts import ChatterboxTTS
     print("Loading Chatterbox model...")
-    try:
-        model = ChatterboxTTS.from_pretrained(device="cuda")
-        device_used = "cuda"
-    except RuntimeError as e:
-        if "CUDA error" in str(e) or "kernel image" in str(e):
-            print(f"CUDA not available ({e}), falling back to CPU")
-            model = ChatterboxTTS.from_pretrained(device="cpu")
-            device_used = "cpu"
-        else:
-            raise
+    if torch.cuda.is_available():
+        try:
+            model = ChatterboxTTS.from_pretrained(device="cuda")
+            device_used = "cuda"
+        except RuntimeError as e:
+            # e.g. wheels without kernels for this GPU architecture
+            if "CUDA error" in str(e) or "kernel image" in str(e):
+                print(f"CUDA unusable ({e}), falling back to CPU")
+                model = ChatterboxTTS.from_pretrained(device="cpu")
+                device_used = "cpu"
+            else:
+                raise
+    else:
+        model = ChatterboxTTS.from_pretrained(device="cpu")
+        device_used = "cpu"
     print(f"Model loaded on {device_used}. Processing {len(jobs)} unit(s), {total_variants} variant(s)...\n")
 
     for unit_name, chunks, run_variants, output_dir in jobs:
